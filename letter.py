@@ -1,0 +1,5 @@
+print('02-11-2024)
+print('It is super fun to learn Python on codedex!')
+print('I want to learn and understnad the working of coding')
+print('Though you started late but I hope we have made it!')
+print('🫶')
