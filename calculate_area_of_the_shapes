@@ -1,0 +1,42 @@
+import math
+def calculate_area():
+    while True:
+        print("\nChoose the shape to calculate the area: ")
+        print("1. Circle")
+        print("2. Square")
+        print("3. Reactangle")
+        print("4. Triangle")
+        print("5. Exit")
+        
+        choice = int(input("Enter you shape choice: "))
+        
+        if choice == 1:
+            radius = float(input("Radius of the circle: "))
+            circle_area = math.pi * radius * radius
+            print("Area of the circle is: ",circle_area)
+            
+        elif choice == 2:
+            length = int(input("Length of the square: "))
+            square_area = length * length
+            print("Area of the circle is: ",square_area)
+        
+        elif choice == 3:
+            length = int(input("Lenght: "))
+            breadth = int(input("Breadth: "))
+            height = int(input("Height: "))
+            rectangle_area = length * breadth * height
+            print("Area of rectangle is: ",rectangle_area)
+            
+        elif choice == 4:
+            base = int(input("Base: "))
+            height = int(input("Height: "))
+            triangle_area = 0.5 * base * height
+            print("Area: ",triangle_area)
+        
+        elif choice == 5:
+            print("Exiting the program")
+            break
+        
+        else:
+            print("Enter valid inputs!")
+calculate_area()
