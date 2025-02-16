@@ -1,2 +1,2 @@
 # pythonLifewithMadhu
-I will be learning python using codedex website
+You can find few python codes I have tried making!
