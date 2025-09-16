@@ -1,0 +1,41 @@
+#install the ntlk and txtblob in the console for this program
+import nltk
+from textblob import TextBlob
+from nltk.tokenize import word_tokenize
+from nltk.corpus import words
+
+# Download necessary datasets
+nltk.download('punkt')
+nltk.download('punkt_tab')
+nltk.download('words')
+
+# Initialize English words
+word_list = set(words.words())
+
+def is_correctly_spelled(word):
+    return word.lower() in word_list
+
+def suggest_corrections(word):
+    blob = TextBlob(word)
+    return str(blob.correct())
+
+def spell_check(text):
+    tokens = word_tokenize(text)
+    corrections = {}
+    for word in tokens:
+        if not is_correctly_spelled(word) and word.isalpha():
+            corrections[word] = suggest_corrections(word)
+    return corrections
+
+if __name__ == "__main__":
+    print("=== Spell Checking Application ===")
+    user_input = input("Enter a sentence to check for spelling errors: ")
+
+    corrections = spell_check(user_input)
+
+    if corrections:
+        print("\n--- Spelling Suggestions ---")
+        for misspelled, suggestion in corrections.items():
+            print(f"Misspelled word: '{misspelled}' -> Suggested correction: '{suggestion}'")
+    else:
+        print("\nNo spelling errors found!")
